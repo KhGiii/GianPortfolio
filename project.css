@@ -1,0 +1,263 @@
+.secProject{
+    padding: 120px var(--gutter) 14vh;
+}
+
+.contBanner{
+    position: relative;
+}
+
+.btnBack{
+    position: absolute;
+    top: var(--edge);
+    left: var(--edge);
+    z-index: 2;
+    gap: 6px;
+    padding: 9px 20px 9px 16px;
+    font-size: 14px;
+}
+
+.btnBack svg{
+    width: 16px;
+    height: 16px;
+}
+
+.imgBanner{
+    aspect-ratio: 21/9;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.contHead{
+    max-width: 900px;
+    margin: 48px 0 72px;
+}
+.contHead h1{
+    font-size: var(--fsH1);
+    line-height: 1.12;
+    letter-spacing: -1px;
+}
+.contHead .txtTag{
+    margin: 14px 0 24px;
+    font-family: var(--heading);
+    font-size: var(--fsH3);
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--sage);
+}
+.contHead p{
+    max-width: 640px;
+    font-size: var(--fsBody);
+    color: var(--muted);
+}
+
+.contActions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+
+.contProjGrid{
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    align-items: start;
+    gap: clamp(32px, 7vw, 110px);
+}
+
+.contOverview{
+    position: sticky;
+    top: 100px;
+}
+.contOverview h3{
+    margin-bottom: 26px;
+    font-size: var(--fsH3);
+}
+.contOverview dt{
+    font-size: var(--fsSmall);
+    color: var(--muted);
+}
+.contOverview dd{
+    margin: 6px 0 22px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+    font-size: var(--fsBody);
+}
+
+.secBlock{
+    margin-bottom: 72px;
+    padding-bottom: 72px;
+    border-bottom: 1px solid var(--line);
+}
+.secBlock:last-child{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+.secBlock h2{
+    margin-bottom: 22px;
+}
+.secBlock p{
+    max-width: 640px;
+    font-size: var(--fsBody);
+    line-height: 1.8;
+    color: var(--soft);
+}
+.secBlock p strong{
+    font-weight: 500;
+    color: var(--text);
+}
+.secBlock ul{
+    padding: 0;
+    list-style: none;
+}
+.secBlock li{
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    font-size: var(--fsBody);
+}
+.secBlock li:last-child{
+    border-bottom: 1px solid var(--line);
+}
+.secBlock li::before{
+    content: "";
+    width: 8px;
+    height: 8px;
+    flex: none;
+    border-radius: 50%;
+    background: var(--sage);
+}
+
+
+/* carousel uiux */
+.contCarousel{
+    --hoverBg: var(--surface);
+    position: relative;
+    margin-top: 24px;
+}
+
+.contTrack{
+    display: flex;
+    gap: 16px;
+    border-radius: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+.contTrack::-webkit-scrollbar{
+    display: none;
+}
+
+.imgSlide{
+    height: clamp(250px, 48vh, 460px);
+    flex: 0 0 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    background: var(--surface);
+}
+.imgSlide img{
+    object-fit: contain;
+}
+
+.btnArrow{
+    bottom: var(--edge);
+}
+.btnPrev{
+    left: var(--edge);
+}
+.btnNext{
+    right: var(--edge);
+}
+
+.btnArrow:disabled{
+    opacity: 0.35;
+    cursor: default;
+}
+.contDots{
+    position: absolute;
+    bottom: calc(var(--edge) + 8px);
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 0 8px;
+    border-radius: 999px;
+    background: rgba(12, 14, 13, 0.55);
+    transform: translateX(-50%);
+}
+
+.btnDot{
+    display: grid;
+    place-items: center;
+    width: 18px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.btnDot::before{
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    transition: width 0.25s, height 0.25s, background 0.25s;
+}
+.btnDot.isActive::before{
+    width: 12px;
+    height: 12px;
+    background: var(--sage);
+}
+
+
+/* responsif HP */
+@media(max-width: 860px){
+    .contProjGrid{
+        grid-template-columns: 1fr;
+    }
+
+    .contOverview{
+        position: static;
+    }
+}
+
+@media(max-width: 760px){
+    .imgBanner{
+        aspect-ratio: 16/10;
+    }
+
+    .contHead{
+        margin: 32px 0 48px;
+    }
+
+    .secBlock{
+        margin-bottom: 48px;
+        padding-bottom: 48px;
+    }
+}
+
+@media(max-width: 560px){
+    .secProject{
+        padding-top: 96px;
+    }
+
+    .imgSlide{
+        height: clamp(220px, 42vh, 360px);
+    }
+
+    .btnArrow{
+        width: 40px;
+        height: 40px;
+    }
+
+    .contDots{
+        bottom: calc(var(--edge) + 6px);
+    }
+}

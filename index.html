@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gian's Porto | Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap">
+
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="navfootpopup.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header class="navBar">
+        <a href="#secIntroID" class="navLogo">Khansa Areta Gianika</a>
+        <button class="btnMenu" id="btnMenuID" aria-label="Open menu" aria-expanded="false" aria-controls="navMenuID">
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="navMenu" id="navMenuID">
+            <a href="#secIntroID" class="btnNav">About</a>
+            <a href="#secWorkID" class="btnNav">Works</a>
+            <a href="#secContactID" class="btnNav">Contact</a>
+            <a class="btnNav" data-resume target="_blank" rel="noopener">Resume</a>
+        </nav>
+    </header>
+    
+    <main id="secIntroID">
+        <section class="secHero">
+            <div class="contHero" id="contHeroID">
+                <div class="contHeroText">
+                    <h1>A Design and Tech Enthusiast aiming to craft meaningful products.</h1>
+                    <p>Undergraduate Computer Science Student at BINUS University with a passion for UI/UX Design and Web Development.</p>
+                    <div class="contLinks" data-contacts></div>
+                </div>
+
+                <div class="contHeroArt">
+                    <img src="images/hero.png" alt="profile">
+                </div>
+            </div>
+        </section>
+
+        <section class="secWork" id="secWorkID">
+            <h2>My Works</h2>
+            <!-- cards dan isinya di build di data.js -->
+            <div class="contGrid" id="contGridID"></div>
+        </section>
+    </main>
+
+    <section class="secContact fxRise" id="secContactID">
+        <div class="contContact">
+            <h2>Like what you see?</h2>
+            <p>Let's connect and collaborate!</p>
+            <div class="contLinks" data-contacts></div>
+        </div>
+    </section>
+
+    <div class="popOverlay" id="popOverlayID"></div>
+    <aside class="popSheet" id="popSheetID" role="dialog" aria-modal="true" aria-labelledby="popTitleID" aria-hidden="true">
+        <div class="popBody">
+            <div class="popInfo">
+                <h2 id="popTitleID"></h2>
+
+                <div class="popFacts">
+                    <div>
+                        <h4>Role</h4>
+                        <p id="popRoleID"></p>
+                    </div>
+
+                    <div>
+                        <h4>Year</h4>
+                        <p id="popYearID"></p>
+                    </div>
+                </div>
+
+                <h4>Description</h4>
+                <p id="popDescID"></p>
+            </div>
+
+            <div class="popMedia">
+                <div class="popImg" id="popImgID"></div>
+
+                <button class="btnClose" id="btnCloseID" aria-label="Close">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+                </button>
+
+                <a href="project.html" class="btnMain" id="btnCaseID">Read Case Study</a>
+            </div>
+
+        </div>
+    </aside>
+
+    <script src="data.js"></script>
+    <script src="site.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

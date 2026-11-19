@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gian's Porto | Projects</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap">
+
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="navfootpopup.css">
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    
+    <header class="navBar">
+        <a href="index.html" class="navLogo">Khansa Areta Gianika</a>
+        <button class="btnMenu" id="btnMenuID" aria-label="Open menu" aria-expanded="false" aria-controls="navMenuID">
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="navMenu" id="navMenuID">
+            <a href="index.html#secIntroID" class="btnNav">About</a>
+            <a href="index.html#secWorkID" class="btnNav">Works</a>
+            <a href="#secContactID" class="btnNav">Contact</a>
+            <a class="btnNav" data-resume target="_blank" rel="noopener">Resume</a>
+        </nav>
+    </header>
+
+    <main class="secProject">
+        <div class="contBanner">
+            <a href="index.html#secWorkID" class="btnMain btnBack" aria-label="Back to all work">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg>
+                Back
+            </a>
+            <div class="imgBanner" id="imgBannerID"></div>
+        </div>
+
+        <div class="contHead">
+            <h1 id="txtTitleID"></h1>
+            <p class="txtTag" id="txtTagID"></p>
+            <p id="txtDescID"></p>
+            <div class="contActions" id="contActionsID"></div>
+        </div>
+
+        <div class="contProjGrid">
+            <aside class="contOverview">
+                <h3>Overview</h3>
+                <dl>
+                    <dt>Role</dt>
+                    <dd id="txtRoleID"></dd>
+
+                    <dt>Year</dt>
+                    <dd id="txtYearID"></dd>
+
+                    <dt>Tools</dt>
+                    <dd id="txtToolsID"></dd>
+                </dl>
+            </aside>
+
+            <div class="contStory">
+                <section class="secBlock fxReveal">
+                    <h2>Problem</h2>
+                    <p id="txtProblemID"></p>
+                </section>
+
+                <section class="secBlock fxReveal">
+                    <h2>Solution</h2>
+                    <p id="txtSolutionID"></p>
+
+                    <div class="contCarousel">
+                        <div class="contTrack" id="contTrackID" tabindex="0" aria-label="Solution images"></div>
+
+                        <button class="btnArrow btnPrev" id="btnPrevID" aria-label="Previous image">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg>
+                        </button>
+                        
+                        <div class="contDots" id="contDotsID"></div>
+
+                        <button class="btnArrow btnNext" id="btnNextID" aria-label="Next image">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="secBlock fxReveal">
+                    <h2>Goals</h2>
+                    <ul id="listGoalsID"></ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <section class="secContact fxRise" id="secContactID">
+        <div class="contContact">
+            <h2>Like what you see?</h2>
+            <p>Let's connect and collaborate!</p>
+            <div class="contLinks" data-contacts></div>
+        </div>
+    </section>
+
+    <script src="data.js"></script>
+    <script src="site.js"></script>
+    <script src="project.js"></script>
+</body>
+</html>

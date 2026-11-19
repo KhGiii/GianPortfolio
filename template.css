@@ -1,0 +1,184 @@
+:root{
+    --bg: #0c0e0d;
+    --sage: #9caf88;
+    --text: #eef1ec;
+
+    --surface: #151816;
+    --soft: #c3cbc0;
+    --muted: #9aa39a;
+    --ink: #111;
+
+    --line: var(--sage);
+    --hoverBg: var(--bg);
+
+    --heading: 'Montserrat', sans-serif;
+    --body: 'Poppins', sans-serif;
+
+    --fsH1: clamp(34px, 2.1vw + 3vh, 58px);
+    --fsH2: clamp(26px, 1.4vw + 2vh, 37px);
+    --fsH3: clamp(18px, 1vw + 1.4vh, 22px);
+    --fsBody: clamp(15px, 0.3vw + 1.1vh, 17px);
+    --fsSmall: 14px;
+
+    --navHeight: 72px;
+    --gutter: max(clamp(24px, 9vw, 180px), calc((100% - 1200px)/2));
+    --edge: clamp(14px, 2.2vw, 24px);
+}
+
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: var(--body);
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+}
+body.isLocked{
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3{
+    font-family: var(--heading);
+    font-weight: 600;
+}
+
+h2{
+    margin-bottom: clamp(20px, 3.5vh, 40px);
+    font-size: var(--fsH2);
+}
+
+:focus-visible{
+    outline: 2px solid var(--sage);
+    outline-offset: 3px;
+}
+
+
+.imgHolder, img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.imgHolder{
+    background: color-mix(in srgb, var(--sage) 30%, var(--surface));
+}
+
+.fxReveal{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s var(--delay, 0s), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0s);
+}
+.fxReveal.isShown{
+    opacity: 1;
+    transform: none;
+}
+
+
+.btnMain{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 26px;
+    border: 1.5px solid var(--sage);
+    border-radius: 999px;
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--sage);
+    cursor: pointer;
+}
+
+.btnMain svg{
+    width: 18px;
+    height: 18px;
+}
+
+.btnClose, .btnArrow{
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid var(--sage);
+    border-radius: 50%;
+    color: var(--ink);
+    background: var(--sage);
+    cursor: pointer;
+}
+
+.btnClose svg, .btnArrow svg{
+    width: 20px;
+    height: 20px;
+}
+
+.btnMain, .btnClose, .btnArrow{
+    transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+
+:is(.btnMain, .btnClose, .btnArrow:enabled):hover,
+.cardProject:is(:hover, :focus-visible) .btnMain{
+    border-color: transparent;
+    color: var(--sage);
+    background: var(--hoverBg);
+}
+
+.btnMain::after, .cardProject::after, .btnClose::after, .btnArrow::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1.5px;
+    border-radius: inherit;
+    background: linear-gradient(to top right, var(--sage) 0%, transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    transition: opacity 0.25s;
+}
+
+:is(.btnMain, .btnClose, .btnArrow:enabled):hover::after,
+.cardProject:is(:hover, :focus-visible)::after,
+.cardProject:is(:hover, :focus-visible) .btnMain::after{
+    opacity: 1;
+}
+
+
+/* Responsif HP */
+@media(max-width: 760px){
+    :root{
+        --gutter: 24px;
+    }
+}
+
+@media(max-width: 400px){
+    .btnMain{
+        padding: 11px 20px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+    .fxReveal{
+        opacity: 1;
+        transform: none;
+    }
+}

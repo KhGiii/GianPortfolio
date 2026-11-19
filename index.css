@@ -1,0 +1,130 @@
+/* Intro to Hero section */
+.secHero{
+    height: 210vh;
+}
+
+.contHero{
+    position: sticky;
+    top: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: center;
+    gap: 40px;
+    height: 100svh;
+    padding: clamp(84px, 15vh, 130px) var(--gutter) clamp(24px, 6vh, 60px);
+}
+
+.contHeroText{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contHeroText h1{
+    max-width: 680px;
+    font-size: var(--fsH1);
+    line-height: 1.12;
+    letter-spacing: -1px;
+}
+
+.contHeroText p{
+    max-width: 520px;
+    font-size: var(--fsBody);
+    color: var(--muted);
+}
+
+.contHeroArt{
+    justify-self: center;
+    width: min(30vw, 32vh);
+    aspect-ratio: 4/5;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.contHeroArt .imgHolder{
+    background: color-mix(in srgb, var(--sage) 45%, var(--bg));
+}
+
+/* Works section */
+.secWork{
+    padding: clamp(90px, 13vh, 140px) var(--gutter) 14vh;
+}
+
+.contGrid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.cardProject{
+    --hoverBg: var(--surface);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px 14px 22px;
+    border: none;
+    border-radius: 20px;
+    font: inherit;
+    text-align: left;
+    color: inherit;
+    background: var(--surface);
+    cursor: pointer;
+}
+
+.cardProject h3{
+    margin: 10px 10px 0;
+    font-size: var(--fsH3);
+}
+
+.cardProject p{
+    margin: 0 10px 8px;
+    font-size: var(--fsSmall);
+    color: var(--muted);
+}
+
+.cardProject .btnMain{
+    align-self: flex-start;
+    margin: 6px 0 0 10px;
+    padding: 10px 22px;
+}
+
+.cardThumb{
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Responsif HP */
+@media (max-width: 860px), (max-height: 540px){
+    .secHero{
+        height: auto;
+    }
+
+    .contHero{
+        position: static;
+        height: auto;
+        min-height: 100svh;
+    }
+}
+@media(max-width: 860px){
+    .contHero{
+        grid-template-columns: 1fr;
+        align-content: center;
+        padding: 112px var(--gutter) 56px;
+    }
+
+    .contHeroArt{
+        width: min(58vw, 260px);
+    }
+
+    .contGrid{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 400px){
+    .contLinks{
+        gap: 8px;
+    }
+}
