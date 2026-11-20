@@ -39,7 +39,7 @@ function createCard(project){
         <div class="cardThumb"></div>
         <h3>${project.title}</h3>
         <p>${project.tagline}</p>
-        <span class="btnMain">View case study</span>`;
+        <span class="btnMain">View Project Details</span>`;
 
     fillFrame(card.querySelector('.cardThumb'), project.thumbnail, project.title);
     card.addEventListener('click', () => openSheet(project, card));
