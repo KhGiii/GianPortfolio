@@ -12,6 +12,7 @@ function fillFrame(frame, src, alt){
         const img = document.createElement('img');
         img.src = src;
         img.alt = alt;
+        img.loading = 'lazy';
         frame.replaceChildren(img);
     }else{
         const placeholder = document.createElement('div');
