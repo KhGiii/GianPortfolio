@@ -3,7 +3,7 @@ const CONTACT = {
     email: 'khansa.gianika@binus.ac.id',
     linkedin: 'https://www.linkedin.com/in/khansa-areta-gianika-b39661326/',
     github: 'https://github.com/KhGiii',
-    resume: 'https://drive.google.com/file/d/1CRagknXftEnw8i14gMoJEudVapi-81zG/view?usp=sharingk'
+    resume: 'https://drive.google.com/file/d/1OUEylJo1WFzhgMdujXfyX4E4m-EbOq3u/view?usp=drive_link'
 };
 
 // info project
